@@ -36,7 +36,7 @@ body:
     id: environment
     attributes:
       label: 运行环境
-      placeholder: Windows 11 / JDK 21 / Node 22 / ...
+      placeholder: Windows 10/11 / Node 20 / Rust stable
     validations:
       required: true
   - type: textarea
