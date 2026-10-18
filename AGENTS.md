@@ -16,6 +16,13 @@ pnpm tauri build   # 打包发布（NSIS 安装包）
 node node_modules/@tauri-apps/cli/tauri.js icon app-icon.svg   # 由 app-icon.svg 重新生成全套图标
 ```
 
+## 本机固定安装目录
+
+- 打包/安装目标：`D:\zzzzzz\crabapple-md`
+- 一键构建并安装：`powershell -ExecutionPolicy Bypass -File scripts\build-install.ps1`
+- 只安装已构建的 exe：`powershell -ExecutionPolicy Bypass -File scripts\install-local.ps1`
+- GitHub Actions 构建：手动运行 `Build Windows` workflow，下载 `crabapple-md-windows` artifact，再执行安装脚本。
+
 ## 结构
 
 - `src/` — React 前端

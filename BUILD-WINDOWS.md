@@ -62,6 +62,28 @@ src-tauri/target/release/
     └── crabapple-md_0.4.0_x64-setup.exe   # NSIS 安装包
 ```
 
+## 本机固定安装目录
+
+本机打包/安装统一到：
+
+```text
+D:\zzzzzz\crabapple-md
+```
+
+一键构建并复制：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\build-install.ps1
+```
+
+只安装已经构建好的 exe：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\install-local.ps1
+```
+
+也可以手动运行 GitHub Actions 的 `Build Windows` workflow，下载 `crabapple-md-windows` artifact 后执行安装脚本。
+
 ## 常见问题
 
 ### Q1: 编译时提示 "link.exe" not found
