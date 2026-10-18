@@ -4,8 +4,29 @@
       <stop offset="0" stop-color="#5B54E8"/>
       <stop offset="1" stop-color="#8B5CF6"/>
     </linearGradient>
+    <linearGradient id="crabapple-md-page" x1="132" y1="84" x2="392" y2="432" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#F3F1FF"/>
+    </linearGradient>
   </defs>
+
   <rect width="512" height="512" rx="112" fill="url(#crabapple-md-bg)"/>
-  <circle cx="250" cy="230" r="112" fill="none" stroke="#FFFFFF" stroke-width="54"/>
-  <path fill="#FFFFFF" fill-rule="evenodd" d="M 339.8 278.8 L 402.8 367.2 L 444.5 424.5 L 387.2 382.8 L 298.8 319.8 Z M 444.5 424.5 L 419.7 392.7 L 412.7 399.7 Z"/>
+
+  <!-- Markdown document -->
+  <rect x="112" y="76" width="288" height="360" rx="40" fill="url(#crabapple-md-page)"/>
+  <path d="M 316 76 H 352 L 400 124 V 160 H 316 Z" fill="#DCD7FF"/>
+  <path d="M 316 76 L 400 160 H 316 Z" fill="#C9C2FF"/>
+
+  <!-- M -->
+  <path d="M 164 300 V 196 L 232 264 L 300 196 V 300"
+        fill="none" stroke="#5B54E8" stroke-width="30"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Down arrow: Markdown -->
+  <path d="M 256 326 V 380"
+        fill="none" stroke="#5B54E8" stroke-width="28"
+        stroke-linecap="round"/>
+  <path d="M 224 350 L 256 382 L 288 350"
+        fill="none" stroke="#5B54E8" stroke-width="28"
+        stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
