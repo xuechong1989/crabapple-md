@@ -1,5 +1,7 @@
 # Quillium
 
+> 仓库名为 `crabapple-md`，对用户展示的应用名/产品名为 **Quillium**；两者是同一个项目。
+
 <img src="src-tauri/icons/128x128.png" width="96" alt="Quillium" />
 
 一款轻量、开箱即用的 **Windows Markdown 编辑器**，基于 Tauri 2 + React 19 + CodeMirror 6 构建。前端负责编辑/预览 UI，Rust 后端负责文件读写、配置持久化、自动备份、单实例与关闭拦截。
