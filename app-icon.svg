@@ -1,12 +1,12 @@
 <svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="crabapple-md-bg" x1="64" y1="64" x2="448" y2="448" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#5B54E8"/>
-      <stop offset="1" stop-color="#8B5CF6"/>
+      <stop offset="0" stop-color="#B3123B"/>
+      <stop offset="1" stop-color="#E63B5F"/>
     </linearGradient>
     <linearGradient id="crabapple-md-page" x1="132" y1="84" x2="392" y2="432" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#FFFFFF"/>
-      <stop offset="1" stop-color="#F3F1FF"/>
+      <stop offset="1" stop-color="#FFF0F2"/>
     </linearGradient>
   </defs>
 
@@ -14,19 +14,19 @@
 
   <!-- Markdown document -->
   <rect x="112" y="76" width="288" height="360" rx="40" fill="url(#crabapple-md-page)"/>
-  <path d="M 316 76 H 352 L 400 124 V 160 H 316 Z" fill="#DCD7FF"/>
-  <path d="M 316 76 L 400 160 H 316 Z" fill="#C9C2FF"/>
+  <path d="M 316 76 H 352 L 400 124 V 160 H 316 Z" fill="#FFD1DA"/>
+  <path d="M 316 76 L 400 160 H 316 Z" fill="#FFB3C1"/>
 
   <!-- M -->
   <path d="M 164 300 V 196 L 232 264 L 300 196 V 300"
-        fill="none" stroke="#5B54E8" stroke-width="30"
+        fill="none" stroke="#B3123B" stroke-width="30"
         stroke-linecap="round" stroke-linejoin="round"/>
 
   <!-- Down arrow: Markdown -->
   <path d="M 256 326 V 380"
-        fill="none" stroke="#5B54E8" stroke-width="28"
+        fill="none" stroke="#B3123B" stroke-width="28"
         stroke-linecap="round"/>
   <path d="M 224 350 L 256 382 L 288 350"
-        fill="none" stroke="#5B54E8" stroke-width="28"
+        fill="none" stroke="#B3123B" stroke-width="28"
         stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
