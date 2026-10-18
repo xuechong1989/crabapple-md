@@ -10,9 +10,21 @@ crabapple-md 是 **Windows 桌面应用**，不是 Web 服务，也没有服务�
 
 - 适合本地 Markdown 写作、会议记录、技术文档；
 - 数据保存在用户本地文件系统，不依赖云服务；
-- 打包目标为 Windows NSIS；仓库 Release 目前只提供源码快照，不附带 exe，需要按本文从源码构建；
+- 打包目标为 Windows NSIS；Release 提供安装版和便携版 exe；
 - 不提供云同步、多人协作、插件市场或移动端；
 - 文件读写通过 Tauri 命令完成，前端浏览器模式（`pnpm dev`）只能预览 UI，不能调用完整文件系统能力。
+
+## 下载与安装
+
+从 [Releases](https://github.com/xuechong1989/crabapple-md/releases) 下载：
+
+| 文件 | 用途 |
+|---|---|
+| `crabapple-md_0.4.0_x64-setup.exe` | NSIS 安装版，推荐普通用户 |
+| `crabapple-md.exe` | 便携版，双击即可运行 |
+| `SHA256SUMS.txt` | 文件校验和 |
+
+安装版按向导安装；便携版放到任意可写目录即可。程序未做代码签名，Windows SmartScreen 可能提示，确认文件来自本仓库 Release 后选择“仍要运行”。
 
 ## 功能特性
 
@@ -150,7 +162,7 @@ cargo check --manifest-path src-tauri/Cargo.toml
 
 ## 已知限制
 
-- Release 目前只有源码快照，没有附加 NSIS `.exe`；需要安装包时请按上面的步骤构建。
+- Release 提供 NSIS 安装包和便携版 exe。
 - NSIS 配置未声明 `fileAssociations`，不会自动注册 `.md` / `.markdown` 文件关联。
 - 配置和备份默认在 exe 同目录；安装在只读目录时需要额外处理写权限。
 - 当前只配置 Windows NSIS 打包，macOS/Linux 未配置。
