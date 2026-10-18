@@ -1,5 +1,7 @@
 # crabapple-md
 
+> 品牌色：海棠红 `#B3123B` · 海棠粉 `#E63B5F` · 叶绿 `#4F9D69`
+
 <img src="src-tauri/icons/128x128.png" width="96" alt="crabapple-md" />
 
 一款轻量、开箱即用的 **Windows Markdown 编辑器**，基于 Tauri 2 + React 19 + CodeMirror 6 构建。前端负责编辑/预览 UI，Rust 后端负责文件读写、配置持久化、自动备份、单实例与关闭拦截。
