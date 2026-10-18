@@ -14,12 +14,5 @@
     </linearGradient>
   </defs>
   <rect width="512" height="512" rx="112" fill="url(#bg)"/>
-  <path d="M 392 112 C 402 70 438 44 474 48 C 470 88 442 116 400 120 C 414 104 426 88 436 72 C 422 82 406 94 392 112 Z" fill="#4F9D69"/>
-  <path d="M 398 116 C 418 102 438 86 454 66" fill="none" stroke="#2F6F49" stroke-width="8" stroke-linecap="round"/>
-  <rect x="96" y="92" width="288" height="344" rx="40" fill="url(#paper)"/>
-  <path d="M 312 92 H 352 L 384 124 V 156 H 312 Z" fill="#FFD1DA"/>
-  <path d="M 312 92 L 384 156 H 312 Z" fill="#FFB3C1"/>
-  <path d="M 172 304 V 204 L 240 272 L 308 204 V 304" fill="none" stroke="#B3123B" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M 240 328 V 376" fill="none" stroke="#B3123B" stroke-width="28" stroke-linecap="round"/>
-  <path d="M 208 348 L 240 380 L 272 348" fill="none" stroke="#B3123B" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 124 376 V 148 L 256 300 L 388 148 V 376" fill="none" stroke="#FFF8F4" stroke-width="68" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

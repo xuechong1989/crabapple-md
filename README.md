@@ -1,6 +1,6 @@
 # crabapple-md
 
-> 品牌色：海棠红 `#B3123B` · 海棠粉 `#E63B5F` · 叶绿 `#4F9D69`
+> 品牌色：海棠红 `#B3123B` · 海棠粉 `#E63B5F` · 深红 `#8E0E2E`
 
 <img src="src-tauri/icons/128x128.png" width="96" alt="crabapple-md" />
 
