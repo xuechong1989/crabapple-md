@@ -2,73 +2,170 @@
 
 <img src="src-tauri/icons/128x128.png" width="96" alt="Quillium" />
 
-一款轻量、纯粹、开箱即用的 Windows Markdown 编辑器 —— 基于 **Tauri 2 + React 19 + CodeMirror 6** 构建。
+一款轻量、开箱即用的 **Windows Markdown 编辑器**，基于 Tauri 2 + React 19 + CodeMirror 6 构建。前端负责编辑/预览 UI，Rust 后端负责文件读写、配置持久化、自动备份、单实例与关闭拦截。
 
-A lightweight and elegant Markdown editor for Windows, built with Tauri 2 + React 19 + CodeMirror 6.
+## 项目定位与适用范围
 
-## 特性
+Quillium 是 **Windows 桌面应用**，不是 Web 服务，也没有服务端：
 
-- **分屏实时预览**：左侧编辑 Markdown 源码，右侧即时渲染，滚动同步
-- **多标签页**：每个文件独立标签，支持右键「关闭当前 / 关闭左侧 / 关闭右侧 / 关闭全部」
-- **目录大纲**：自动提取标题生成大纲（与预览渲染完全一致，代码块内 `#` 不会被误判）
-- **查找替换**：内置搜索栏（Ctrl+F），支持上一个 / 下一个 / 全部替换
-- **工具栏**：14 个常用格式化按钮（标题、加粗、斜体、引用、列表、表格、链接、图片等）
-- **代码高亮**：编辑区与预览区均支持多语言代码语法高亮
-- **会话保持**：重启后自动恢复上次的标签页与未保存内容
-- **自动备份**：按设定间隔自动备份正在编辑的文件（按日期归档到备份目录）
-- **未保存提醒**：关闭窗口前弹出原生确认框，防止误关丢稿
-- **文件关联**：双击 `.md` / `.markdown` 文件直接在 Quillium 中打开；单实例模式下自动新建标签页
-- **便携配置**：设置与会话保存为 exe 同目录的 `quillium.json`，整个目录随拷随用
-- **拖拽打开**：将 Markdown 文件拖入窗口即可打开
+- 适合本地 Markdown 写作、会议记录、技术文档；
+- 数据保存在用户本地文件系统，不依赖云服务；
+- 当前只提供 Windows NSIS 安装包，macOS/Linux 未配置打包；
+- 不提供云同步、多人协作、插件市场或移动端；
+- 文件读写通过 Tauri 命令完成，前端浏览器模式（`pnpm dev`）只能预览 UI，不能调用完整文件系统能力。
+
+## 功能特性
+
+- 分屏实时预览：左侧 Markdown 源码，右侧即时渲染、滚动同步
+- 多标签页：独立标签，支持关闭当前/左侧/右侧/全部
+- 目录大纲：从 Markdown 标题提取，代码块内 `#` 不误判
+- 查找替换：Ctrl+F，支持上一个/下一个/全部替换
+- 14 个常用格式工具栏按钮
+- 编辑区与预览区代码高亮
+- 会话保持：重启恢复标签页与未保存内容
+- 自动备份：按配置间隔备份到备份目录（默认 exe 同级 `backup/`）
+- 关闭未保存提醒
+- `.md` / `.markdown` 文件关联、单实例新建标签
+- 便携配置：`quillium.json` 与 exe 同目录
+- 拖拽打开文件
 
 ## 技术栈
 
 | 层级 | 技术 |
-|------|------|
+|---|---|
 | 应用框架 | [Tauri 2](https://tauri.app)（Rust） |
-| 前端框架 | React 19 + TypeScript |
+| 前端 | React 19 + TypeScript |
 | 编辑器 | [CodeMirror 6](https://codemirror.net) |
 | Markdown 解析 | [markdown-it](https://github.com/markdown-it/markdown-it) |
-| 构建工具 | Vite + pnpm |
+| 构建 | Vite + pnpm |
 
-## 下载安装
+## 环境要求（Windows 源码构建）
 
-前往本仓库 **Releases** 页面下载最新版 NSIS 安装包（`.exe`）安装即可。
+| 依赖 | 要求 |
+|---|---|
+| 操作系统 | Windows 10/11 x64 |
+| Node.js | 20+（与 `.nvmrc` 一致） |
+| pnpm | 10+ |
+| Rust | stable（rustup 安装） |
+| Visual Studio Build Tools | 勾选「使用 C++ 的桌面开发」 |
+| WebView2 | Windows 10/11 通常已内置；缺失时安装 Microsoft Edge WebView2 Runtime |
 
-## 从源码构建
+> 项目使用 Tauri 默认的 MSVC 工具链；仓库不提交 `.cargo/config.toml`，不要把本机的 GNU target 或镜像配置写进仓库。
 
-> 详细步骤见 [BUILD-WINDOWS.md](BUILD-WINDOWS.md)，也可直接双击 `build.bat` 一键构建。
-
-环境要求（Windows 10/11）：
-
-1. [Node.js](https://nodejs.org) 20+ 和 pnpm：`npm install -g pnpm`
-2. [Rust](https://rustup.rs)（rustup 安装）
-3. [Visual Studio Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/)（勾选「使用 C++ 的桌面开发」）
+## 安装与开发启动
 
 ```bash
-pnpm install        # 安装依赖
-pnpm tauri dev      # 开发模式（热重载）
-pnpm tauri build    # 打包发布，产物在 src-tauri/target/release/bundle/nsis/
+git clone https://github.com/xuechong1989/crabapple-md.git
+cd crabapple-md
+
+pnpm install
+pnpm tauri dev       # 完整桌面应用，热重载
 ```
 
-## 快捷键
+只调试前端 UI（没有文件读写/备份/单实例能力）：
+
+```bash
+pnpm dev             # Vite，浏览器访问默认 1420 端口
+```
+
+前端类型检查与生产构建：
+
+```bash
+pnpm build           # tsc && vite build
+```
+
+## 打包 Windows 安装包
+
+```bash
+cd crabapple-md
+pnpm install
+pnpm tauri build
+```
+
+输出目录：
+
+```text
+src-tauri/target/release/
+├── Quillium.exe
+└── bundle/
+    └── nsis/
+        └── Quillium_0.4.0_x64-setup.exe
+```
+
+也可以双击 `build.bat`，按菜单选择构建/运行/检查环境。详细步骤见 [BUILD-WINDOWS.md](BUILD-WINDOWS.md)。
+
+## 安装后的使用
+
+1. 运行 `Quillium_0.4.0_x64-setup.exe`，按 NSIS 向导安装。
+2. 打开应用后，用 `Ctrl+O` 打开 `.md` / `.markdown`，或直接把文件拖入窗口。
+3. `Ctrl+S` 保存；关闭有未保存内容的标签/窗口时会提示。
+4. 双击 `.md` 文件默认由 Quillium 打开；单实例模式下会在已有窗口新建标签。
+
+### 快捷键
 
 | 快捷键 | 功能 |
-|--------|------|
+|---|---|
 | `Ctrl+O` | 打开文件 |
 | `Ctrl+S` | 保存文件 |
 | `Ctrl+W` | 关闭当前标签页 |
-| `Ctrl+F` | 查找 / 替换 |
-| `Ctrl+Z` / `Ctrl+Y` | 撤销 / 重做 |
+| `Ctrl+F` | 查找/替换 |
+| `Ctrl+Z` / `Ctrl+Y` | 撤销/重做 |
 
-## 配置文件
+## 配置与数据
 
-所有设置保存在 exe 同目录下的 `quillium.json`（编辑器字号、Tab 大小、自动备份间隔等），无需注册表，删除即恢复默认。
+配置文件位于 **exe 同目录**：
 
-## 致谢
+```text
+quillium.json
+```
 
-本项目基于以下优秀开源项目构建：[Tauri](https://tauri.app)、[React](https://react.dev)、[CodeMirror](https://codemirror.net)、[markdown-it](https://github.com/markdown-it/markdown-it)、[Vite](https://vite.dev)。
+包含编辑器字号、Tab 大小、备份间隔、`backup_dir`、会话等。删除该文件即恢复默认；整个应用目录可随拷随用。
+
+自动备份：
+
+- 默认备份目录是 exe 同级 `backup/`；
+- 可在 `quillium.json` 的 `backup_dir` 指定其他目录；
+- 默认间隔 300 秒，`backup_interval` 可改；
+- 备份只针对当前正在编辑的文件，不替代版本控制。
+
+数据边界：
+
+- 文件内容保存在你打开/保存的原始路径；
+- Quillium 不上传文件到项目服务器；
+- 预览中的远程图片/链接是否加载取决于 Markdown 内容与网络；
+- 卸载应用不会自动删除你打开的 Markdown 文件或备份目录。
+
+## 测试与检查
+
+```bash
+pnpm build
+cargo check --manifest-path src-tauri/Cargo.toml
+```
+
+当前没有独立的前端单元测试脚本；`pnpm build` 包含 TypeScript 类型检查，CI 还会执行 `cargo check`。CI 见 [.github/workflows/ci.yml](.github/workflows/ci.yml)。
+
+## 常见构建问题
+
+- `link.exe not found`：安装 Visual Studio Build Tools，选择「使用 C++ 的桌面开发」。
+- `Windows SDK version` 错误：在 Visual Studio Installer 中安装/更新 Windows SDK。
+- 启动白屏/缺 DLL：安装 WebView2 Runtime。
+- crates.io 下载慢：在本机 `%USERPROFILE%\.cargo\config.toml` 配镜像，**不要提交到仓库**。
+- 不要强制 `target = "x86_64-pc-windows-gnu"`；本项目按 MSVC 构建。
+
+## 适用与不适用
+
+**适合：**
+
+- Windows 上想要轻量、便携、本地优先 Markdown 编辑器的用户；
+- 需要多标签、大纲、查找替换、自动备份的写作者；
+- 想基于 Tauri 2 + React 二次开发的开发者。
+
+**不适合：**
+
+- macOS/Linux 用户（当前未配置对应打包）；
+- 需要云同步、多人实时协作、插件生态的用户；
+- 想把编辑器当 Web 服务部署的场景。
 
 ## 许可证
 
-[Apache License 2.0](LICENSE) © 2026 xuechong
+[Apache License 2.0](LICENSE) © 2026 xuechong。第三方组件许可见 [NOTICE](NOTICE)。
