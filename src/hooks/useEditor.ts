@@ -8,7 +8,7 @@
 import { useState, useCallback, useRef, useEffect } from 'react';
 import { openFile, saveFile, readFile, isMarkdownFile, getFileName, FileInfo } from '../utils/file-system';
 
-const SESSION_KEY = 'quillium-session';
+const SESSION_KEY = 'crabapple-md-session';
 
 interface SessionData {
   tabs: Array<{ filePath: string | null; content: string; savedContent: string }>;

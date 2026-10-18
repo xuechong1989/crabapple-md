@@ -150,7 +150,7 @@ fn get_launch_file() -> Result<Option<String>, String> {
 /**
  * xuechong 2026-08-07 0.3.00 应用入口
  */
-// xuechong 2026-08-07 0.3.00 ===== 配置持久化（quillium.json）=====
+// xuechong 2026-08-07 0.3.00 ===== 配置持久化（crabapple-md.json）=====
 // xuechong 2026-06-20 0.3.00
 
 use std::sync::Mutex;
@@ -399,7 +399,7 @@ pub fn run() {
                         let confirmed = handle
                             .dialog()
                             .message("有未保存的修改，确定要退出吗？\n\n未保存的修改将丢失。")
-                            .title("Quillium — 确认退出")
+                            .title("crabapple-md — 确认退出")
                             .kind(tauri_plugin_dialog::MessageDialogKind::Warning)
                             .buttons(tauri_plugin_dialog::MessageDialogButtons::OkCancel)
                             .blocking_show();

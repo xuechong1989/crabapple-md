@@ -2,7 +2,7 @@
 
 ## 项目简介
 
-Quillium 是一款基于 Tauri 2 + React 19 + CodeMirror 6 的 Windows Markdown 编辑器。
+crabapple-md 是一款基于 Tauri 2 + React 19 + CodeMirror 6 的 Windows Markdown 编辑器。
 Rust 后端负责文件读写、配置持久化、自动备份与窗口关闭拦截；前端负责编辑器、预览与 UI。
 
 ## 常用命令
@@ -20,7 +20,7 @@ node node_modules/@tauri-apps/cli/tauri.js icon app-icon.svg   # 由 app-icon.sv
 
 - `src/` — React 前端
   - `components/`：Editor（CodeMirror）、Preview、Outline、SearchBar、StatusBar、TabBar、Settings、Changelog
-  - `hooks/`：useEditor（标签/会话）、useSettings（localStorage）、useConfig（quillium.json 持久化）
+  - `hooks/`：useEditor（标签/会话）、useSettings（localStorage）、useConfig（crabapple-md.json 持久化）
   - `utils/`：markdown-parser（markdown-it）、outline-parser（大纲）、file-system
 - `src-tauri/` — Rust 后端
   - `src/lib.rs`：文件命令、配置读写、自动备份、单实例、关闭拦截

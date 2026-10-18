@@ -1,8 +1,8 @@
 {
-  "name": "quillium",
+  "name": "crabapple-md",
   "private": true,
   "version": "0.4.0",
-  "description": "Quillium — 轻量优雅的 Markdown 编辑器（Tauri 2 + React + CodeMirror 6）",
+  "description": "crabapple-md — 轻量优雅的 Markdown 编辑器（Tauri 2 + React + CodeMirror 6）",
   "type": "module",
   "author": "xuechong",
   "license": "Apache-2.0",

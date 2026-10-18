@@ -55,7 +55,7 @@ const VERSIONS: VersionEntry[] = [
     date: '2026-07-03',
     changes: {
       Added: [
-        'Windows .md 文件关联支持：双击 .md 文件自动在 Quillium 中打开',
+        'Windows .md 文件关联支持：双击 .md 文件自动在 crabapple-md 中打开',
         '单实例模式：再次双击 .md 文件时，在现有窗口新建标签页而非启动新窗口',
         '启动文件检测：命令行参数传入的 .md 文件优先于会话恢复打开',
       ],
@@ -88,7 +88,7 @@ const VERSIONS: VersionEntry[] = [
         '底部状态栏（文件名/字符数/单词数/行数）',
         '多标签页管理——每个文件独立标签，互不覆盖',
         '标签右键菜单：关闭当前/右侧/左侧/所有',
-        '窗口标题栏 Quillium 品牌名 + 应用图标',
+        '窗口标题栏 crabapple-md 品牌名 + 应用图标',
         'Windows 10/11 便携版单文件发布（exe + dll）',
         '窗口关闭时未保存文件提醒',
         '启动时自动恢复上次打开的标签页（会话保持）',
@@ -168,7 +168,7 @@ export default function ChangelogModal({ onClose }: Props) {
             </div>
           ))}
 
-          <p className="cl-footer">Quillium — Windows 10/11</p>
+          <p className="cl-footer">crabapple-md — Windows 10/11</p>
         </div>
       </div>
     </div>

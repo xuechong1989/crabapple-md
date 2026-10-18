@@ -1,6 +1,6 @@
 作者 xuechong 2026-06-19 操作：同步全部功能到开发方案 ｜ 数据库：无
 
-# 开发方案：Quillium（Markdown 编辑器）
+# 开发方案：crabapple-md（Markdown 编辑器）
 
 > **创建日期**：2026-06-17（持续更新）
 > **任务来源**：自有产品需求
@@ -43,13 +43,13 @@
 - **[REQ-010] 关闭提醒**：窗口关闭时检查未保存文件，弹窗确认防止误关
 - **[REQ-011] 会话保持**：关闭软件自动保存标签页列表，重新打开时恢复
 - **[REQ-012] 路径显示与复制**：标题栏路径显示，一键复制到剪贴板
-- **[REQ-013] Quillium 品牌**：软件名 + 应用图标 + 窗口标题
+- **[REQ-013] crabapple-md 品牌**：软件名 + 应用图标 + 窗口标题
 - **[REQ-014] 版本管理**：标题栏版本按钮，弹窗显示版本记录（Keep a Changelog 格式）
 - **[REQ-015] 状态栏**：文件名/文件路径/修改标记、字符数/单词数/行数统计
 - **[REQ-016] 自动备份**：按间隔自动备份正在编辑的文件（按日期归档）
 - **[REQ-017] 目录大纲**：基于 markdown-it token 流提取标题
 - **[REQ-018] 查找替换**：Ctrl+F 搜索栏，支持替换/全部替换
-- **[REQ-019] 配置持久化**：设置会话存入 exe 同目录 quillium.json（便携化）
+- **[REQ-019] 配置持久化**：设置会话存入 exe 同目录 crabapple-md.json（便携化）
 
 ---
 
@@ -82,7 +82,7 @@
 ### 4.2 项目结构
 
 ```
-quillium/
+crabapple-md/
 ├── src-tauri/                      # Tauri 后端（Rust）
 │   ├── src/
 │   │   ├── main.rs                # Rust 入口
@@ -139,8 +139,8 @@ onChange → setContent(content)
 
 | 产物 | 说明 |
 |------|------|
-| `src-tauri/target/release/Quillium.exe` | 主程序 |
-| `src-tauri/target/release/bundle/nsis/Quillium_x.x.x_x64-setup.exe` | NSIS 安装包 |
+| `src-tauri/target/release/crabapple-md.exe` | 主程序 |
+| `src-tauri/target/release/bundle/nsis/crabapple-md_x.x.x_x64-setup.exe` | NSIS 安装包 |
 
 ---
 

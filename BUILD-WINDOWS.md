@@ -1,6 +1,6 @@
-# Quillium Windows 编译说明
+# crabapple-md Windows 编译说明
 
-> 作者 xuechong 2026-06-17 ｜ 适用于 Quillium v0.4.0
+> 作者 xuechong 2026-06-17 ｜ 适用于 crabapple-md v0.4.0
 
 ## 环境要求
 
@@ -57,9 +57,9 @@ pnpm tauri dev
 
 ```
 src-tauri/target/release/
-├── Quillium.exe                 # 主程序
+├── crabapple-md.exe                 # 主程序
 └── bundle/nsis/
-    └── Quillium_0.4.0_x64-setup.exe   # NSIS 安装包
+    └── crabapple-md_0.4.0_x64-setup.exe   # NSIS 安装包
 ```
 
 ## 常见问题

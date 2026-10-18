@@ -1,5 +1,5 @@
 /**
- * 统一配置管理 Hook — quillium.json 读写
+ * 统一配置管理 Hook — crabapple-md.json 读写
  * xuechong 2026-06-20 0.3.00 功能：替代 localStorage，持久化到 exe 同目录
  */
 
@@ -35,7 +35,7 @@ export function useConfig() {
     (async () => {
       try {
         const exeDir: string = await invoke('get_exe_dir');
-        configPathRef.current = exeDir.replace(/\\/g, '/') + '/quillium.json';
+        configPathRef.current = exeDir.replace(/\\/g, '/') + '/crabapple-md.json';
         const data: ConfigData = await invoke('read_config', {
           configPath: configPathRef.current,
         });

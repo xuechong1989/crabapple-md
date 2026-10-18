@@ -1,13 +1,13 @@
 [package]
-name = "quillium"
+name = "crabapple-md"
 version = "0.4.0"
-description = "Quillium — a lightweight Markdown editor built with Tauri 2"
+description = "crabapple-md — a lightweight Markdown editor built with Tauri 2"
 authors = ["xuechong"]
 license = "Apache-2.0"
 edition = "2021"
 
 [lib]
-name = "quillium_lib"
+name = "crabapple_md_lib"
 crate-type = ["staticlib", "cdylib", "rlib"]
 
 [build-dependencies]

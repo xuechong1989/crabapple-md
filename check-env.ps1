@@ -1,4 +1,4 @@
-# Quillium Environment Check Script
+# crabapple-md Environment Check Script
 # Author: xuechong 2026-06-17
 
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
@@ -8,7 +8,7 @@ $ErrorActionPreference = "Continue"
 
 Write-Host ""
 Write-Host "========================================" -ForegroundColor Cyan
-Write-Host "   Quillium Environment Check" -ForegroundColor Cyan
+Write-Host "   crabapple-md Environment Check" -ForegroundColor Cyan
 Write-Host "========================================" -ForegroundColor Cyan
 Write-Host ""
 

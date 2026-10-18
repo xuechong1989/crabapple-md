@@ -1,8 +1,8 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "Quillium",
+  "productName": "crabapple-md",
   "version": "0.4.0",
-  "identifier": "com.quillium.desktop",
+  "identifier": "com.crabapple.md",
   "build": {
     "beforeDevCommand": "pnpm dev",
     "devUrl": "http://localhost:1420",
@@ -12,7 +12,7 @@
   "app": {
     "windows": [
       {
-        "title": "Quillium",
+        "title": "crabapple-md",
         "width": 1200,
         "height": 800,
         "minWidth": 800,

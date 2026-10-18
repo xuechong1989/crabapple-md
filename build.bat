@@ -1,9 +1,9 @@
 @echo off
-title Quillium - Build Script
+title crabapple-md - Build Script
 
 echo.
 echo ========================================
-echo    Quillium Build Script
+echo    crabapple-md Build Script
 echo ========================================
 echo.
 echo Please select an option:

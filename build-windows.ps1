@@ -1,4 +1,4 @@
-# Quillium Windows Build Script
+# crabapple-md Windows Build Script
 # Author: xuechong 2026-06-17
 
 param(
@@ -42,7 +42,7 @@ Set-Location $ScriptDir
 
 Write-Host ""
 Write-Host "========================================" -ForegroundColor Cyan
-Write-Host "   Quillium Build Script" -ForegroundColor Cyan
+Write-Host "   crabapple-md Build Script" -ForegroundColor Cyan
 Write-Host "========================================" -ForegroundColor Cyan
 Write-Host ""
 
@@ -136,12 +136,12 @@ if ($Dev) {
         Write-Success "Build completed!"
         Write-Host ""
         Write-Info "Executable:"
-        Write-Host "  src-tauri\target\release\Quillium.exe" -ForegroundColor Yellow
+        Write-Host "  src-tauri\target\release\crabapple-md.exe" -ForegroundColor Yellow
         Write-Host ""
 
         $run = Read-Host "Run the program now? (Y/N)"
         if ($run -eq "Y" -or $run -eq "y") {
-            Start-Process "src-tauri\target\release\Quillium.exe"
+            Start-Process "src-tauri\target\release\crabapple-md.exe"
         }
     } else {
         Write-Err "Build failed!"
@@ -157,7 +157,7 @@ if ($Dev) {
         Write-Host ""
         Write-Success "Build completed! Starting program..."
         Write-Host ""
-        Start-Process "src-tauri\target\release\Quillium.exe"
+        Start-Process "src-tauri\target\release\crabapple-md.exe"
     } else {
         Write-Err "Build failed!"
         exit 1

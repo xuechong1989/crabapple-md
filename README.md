@@ -1,14 +1,12 @@
-# Quillium
+# crabapple-md
 
-> 仓库名为 `crabapple-md`，对用户展示的应用名/产品名为 **Quillium**；两者是同一个项目。
-
-<img src="src-tauri/icons/128x128.png" width="96" alt="Quillium" />
+<img src="src-tauri/icons/128x128.png" width="96" alt="crabapple-md" />
 
 一款轻量、开箱即用的 **Windows Markdown 编辑器**，基于 Tauri 2 + React 19 + CodeMirror 6 构建。前端负责编辑/预览 UI，Rust 后端负责文件读写、配置持久化、自动备份、单实例与关闭拦截。
 
 ## 项目定位与适用范围
 
-Quillium 是 **Windows 桌面应用**，不是 Web 服务，也没有服务端：
+crabapple-md 是 **Windows 桌面应用**，不是 Web 服务，也没有服务端：
 
 - 适合本地 Markdown 写作、会议记录、技术文档；
 - 数据保存在用户本地文件系统，不依赖云服务；
@@ -28,10 +26,10 @@ Quillium 是 **Windows 桌面应用**，不是 Web 服务，也没有服务端�
 - 自动备份：按配置间隔备份到备份目录（默认 exe 同级 `backup/`）
 - 关闭未保存提醒
 - 通过拖拽、命令行或系统“打开方式”接收 `.md` / `.markdown`；单实例下在已有窗口新建标签
-- 配置默认写入 exe 同目录的 `quillium.json`
+- 配置默认写入 exe 同目录的 `crabapple-md.json`
 - 拖拽打开文件
 
-> 当前 `tauri.conf.json` 未声明 `bundle.fileAssociations`，NSIS 安装包不会自动把 `.md` / `.markdown` 注册为 Quillium 文件。需要双击直接打开时，请在 Windows 设置中手动关联，或先补充 `fileAssociations` 后重新打包。
+> 当前 `tauri.conf.json` 未声明 `bundle.fileAssociations`，NSIS 安装包不会自动把 `.md` / `.markdown` 注册为 crabapple-md 文件。需要双击直接打开时，请在 Windows 设置中手动关联，或先补充 `fileAssociations` 后重新打包。
 
 ## 技术栈
 
@@ -90,20 +88,20 @@ pnpm tauri build
 
 ```text
 src-tauri/target/release/
-├── Quillium.exe
+├── crabapple-md.exe
 └── bundle/
     └── nsis/
-        └── Quillium_0.4.0_x64-setup.exe
+        └── crabapple-md_0.4.0_x64-setup.exe
 ```
 
 也可以双击 `build.bat`，按菜单选择构建/运行/检查环境。详细步骤见 [BUILD-WINDOWS.md](BUILD-WINDOWS.md)。
 
 ## 安装后的使用
 
-1. 运行 `Quillium_0.4.0_x64-setup.exe`，按 NSIS 向导安装。
+1. 运行 `crabapple-md_0.4.0_x64-setup.exe`，按 NSIS 向导安装。
 2. 打开应用后，用 `Ctrl+O` 打开 `.md` / `.markdown`，或直接把文件拖入窗口。
 3. `Ctrl+S` 保存；关闭有未保存内容的标签/窗口时会提示。
-4. 如需双击 `.md` 直接打开，先在 Windows「设置 → 默认应用」中把 `.md` 关联到 Quillium；当前安装包不会自动注册该关联。
+4. 如需双击 `.md` 直接打开，先在 Windows「设置 → 默认应用」中把 `.md` 关联到 crabapple-md；当前安装包不会自动注册该关联。
 5. 在单实例模式下，通过系统“打开方式”再次打开文件，会在已有窗口新建标签。
 
 ### 快捷键
@@ -121,7 +119,7 @@ src-tauri/target/release/
 配置文件位于 **exe 同目录**：
 
 ```text
-quillium.json
+crabapple-md.json
 ```
 
 包含编辑器字号、Tab 大小、备份间隔、`backup_dir`、会话等。删除该文件即恢复默认；放在可写目录时可随应用目录一起拷贝。
@@ -129,14 +127,14 @@ quillium.json
 自动备份：
 
 - 默认备份目录是 exe 同级 `backup/`；
-- 可在 `quillium.json` 的 `backup_dir` 指定其他目录；
+- 可在 `crabapple-md.json` 的 `backup_dir` 指定其他目录；
 - 默认间隔 300 秒，`backup_interval` 可改；
 - 备份只针对当前正在编辑的文件，不替代版本控制。
 
 数据边界：
 
 - 文件内容保存在你打开/保存的原始路径；
-- Quillium 不上传文件到项目服务器；
+- crabapple-md 不上传文件到项目服务器；
 - 预览中的远程图片/链接是否加载取决于 Markdown 内容与网络；
 - 卸载应用不会自动删除你打开的 Markdown 文件或备份目录；
 - 配置文件在 exe 同目录；如果安装到 `Program Files` 等受保护目录，普通用户可能没有写权限，建议安装到用户目录或使用可写的便携目录。

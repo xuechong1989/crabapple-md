@@ -5,7 +5,7 @@
 
 import { useState, useCallback } from 'react';
 
-const SETTINGS_KEY = 'quillium-settings';
+const SETTINGS_KEY = 'crabapple-md-settings';
 
 export interface EditorSettings {
   fontSize: number;      // 12-24
