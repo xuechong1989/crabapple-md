@@ -1,0 +1,56 @@
+/**
+ * 系统设置弹窗样式
+ * xuechong 2026-06-20 0.3.00
+ */
+
+.stg-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 10000;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.stg-modal {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  width: 420px;
+  max-height: 80vh;
+  display: flex; flex-direction: column; overflow: hidden;
+}
+
+.stg-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 20px;
+  border-bottom: 1px solid #e1e4e8;
+}
+.stg-header h2 { margin: 0; font-size: 16px; color: #24292e; }
+.stg-close { background: none; border: none; font-size: 22px; cursor: pointer; color: #586069; padding: 0 4px; }
+.stg-close:hover { color: #24292e; }
+
+.stg-body {
+  padding: 16px 20px;
+  overflow-y: auto; flex: 1;
+}
+.stg-body h3 {
+  font-size: 13px; color: #586069; margin: 16px 0 10px;
+  padding-bottom: 4px; border-bottom: 1px solid #eee;
+}
+.stg-body h3:first-child { margin-top: 0; }
+
+.stg-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 6px 0;
+  font-size: 13px; color: #24292e;
+  cursor: pointer;
+}
+
+.stg-row select {
+  padding: 3px 8px; font-size: 12px;
+  border: 1px solid #d1d5da; border-radius: 3px;
+  background: #fff; min-width: 80px;
+}
+
+.stg-row input[type="checkbox"] {
+  width: 16px; height: 16px; cursor: pointer;
+}

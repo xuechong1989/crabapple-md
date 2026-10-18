@@ -1,0 +1,34 @@
+# 依赖
+node_modules/
+
+# 构建产物
+dist/
+src-tauri/target/
+
+# 日志与临时文件
+*.log
+logs/
+tmp/
+temp/
+
+# 本地配置与密钥材料，禁止入库
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+quillium.json
+.cargo/config.toml
+
+# 系统与 IDE
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+*.swo
+~$*

@@ -1,0 +1,11 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="quillium-bg" x1="64" y1="64" x2="448" y2="448" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5B54E8"/>
+      <stop offset="1" stop-color="#8B5CF6"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#quillium-bg)"/>
+  <circle cx="250" cy="230" r="112" fill="none" stroke="#FFFFFF" stroke-width="54"/>
+  <path fill="#FFFFFF" fill-rule="evenodd" d="M 339.8 278.8 L 402.8 367.2 L 444.5 424.5 L 387.2 382.8 L 298.8 319.8 Z M 444.5 424.5 L 419.7 392.7 L 412.7 399.7 Z"/>
+</svg>

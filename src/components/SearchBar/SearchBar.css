@@ -1,0 +1,17 @@
+/**
+ * 搜索替换栏样式
+ * xuechong 2026-06-20 0.3.00
+ */
+
+.sr-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; flex: 1; min-width: 260px; }
+.sr-row { display: flex; align-items: center; gap: 3px; }
+.sr-input { width: 140px; padding: 4px 8px; border: 1px solid #d1d5da; border-radius: 4px; font-size: 12px; outline: none; background: #fff; color: #24292e; }
+.sr-input:focus { border-color: #0366d6; box-shadow: 0 0 0 2px rgba(3,102,214,0.2); }
+.sr-input::placeholder { color: #8b949e; }
+.sr-btn { padding: 4px 7px; border: 1px solid #d1d5da; border-radius: 4px; background: #fff; color: #24292e; cursor: pointer; font-size: 12px; }
+.sr-btn:hover { background: #e8f0fe; }
+.sr-replace { background: #e8f0fe; border-color: #b6d4fe; }
+.sr-replace-all { background: #0366d6; color: #fff; border-color: #0366d6; }
+.sr-replace-all:hover { background: #0256b8; }
+.sr-check { display: flex; align-items: center; gap: 1px; font-size: 11px; color: #586069; cursor: pointer; white-space: nowrap; }
+.sr-check input { width: 14px; height: 14px; accent-color: #0366d6; }

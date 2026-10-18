@@ -1,0 +1,84 @@
+/**
+ * GitHub风格 Markdown 渲染样式
+ * 作者 xuechong 2026-06-18 0.3.00
+ * 更新 xuechong 2026-06-20 0.3.00 功能：自适应宽度+表格优化
+ */
+
+.markdown-body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #1f2328;
+  padding: 16px;
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+.markdown-body > :first-child { margin-top: 0 !important; }
+
+.markdown-body h1 { font-size: 2em; font-weight: 600; margin: 24px 0 16px; padding-bottom: 0.3em; border-bottom: 1px solid #d8dee4; }
+.markdown-body h2 { font-size: 1.5em; font-weight: 600; margin: 24px 0 16px; padding-bottom: 0.3em; border-bottom: 1px solid #d8dee4; }
+.markdown-body h3 { font-size: 1.25em; font-weight: 600; margin: 24px 0 16px; }
+.markdown-body h4 { font-size: 1em; font-weight: 600; margin: 24px 0 16px; }
+.markdown-body h5 { font-size: 0.875em; font-weight: 600; margin: 24px 0 16px; }
+.markdown-body h6 { font-size: 0.85em; font-weight: 600; margin: 24px 0 16px; color: #656d76; }
+
+.markdown-body p { margin: 0 0 16px; }
+.markdown-body a { color: #0969da; text-decoration: none; }
+.markdown-body a:hover { text-decoration: underline; }
+.markdown-body strong { font-weight: 600; }
+.markdown-body img { max-width: 100%; }
+.markdown-body hr { height: 0.25em; padding: 0; margin: 24px 0; background-color: #d8dee4; border: 0; }
+
+.markdown-body ul, .markdown-body ol { padding-left: 2em; margin: 0 0 16px; }
+.markdown-body li { margin: 4px 0; }
+.markdown-body li > p { margin: 0; }
+
+.markdown-body blockquote {
+  margin: 0 0 16px;
+  padding: 0 1em;
+  color: #656d76;
+  border-left: 0.25em solid #d8dee4;
+}
+
+.markdown-body code {
+  padding: 0.2em 0.4em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(175,184,193,0.2);
+  border-radius: 6px;
+  font-family: "Cascadia Code","JetBrains Mono",Consolas,monospace;
+}
+
+.markdown-body pre {
+  padding: 16px;
+  overflow-x: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f6f8fa;
+  border-radius: 6px;
+  margin: 0 0 16px;
+}
+.markdown-body pre code { padding: 0; background: none; font-size: 100%; }
+
+.markdown-body table {
+  width: 100%;
+  table-layout: auto;
+  border-collapse: collapse;
+  margin: 0 0 16px;
+}
+.markdown-body th, .markdown-body td {
+  padding: 6px 13px;
+  border: 1px solid #d8dee4;
+  word-break: break-word;
+}
+.markdown-body th { font-weight: 600; background: #f6f8fa; }
+.markdown-body tr:nth-child(2n) { background: #f6f8fa; }
+
+.markdown-body input[type="checkbox"] { margin-right: 6px; }
+
+/* 允许文本选择 xuechong 2026-06-20 0.3.00 */
+.markdown-body {
+  user-select: text;
+  -webkit-user-select: text;
+}
