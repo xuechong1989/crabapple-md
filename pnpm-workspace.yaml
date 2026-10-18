@@ -3,3 +3,8 @@ packages:
 
 onlyBuiltDependencies:
   - esbuild
+
+overrides:
+  linkify-it: 5.0.2
+  postcss: 8.5.23
+  source-map-js: 1.2.2
