@@ -6,7 +6,7 @@
 
 ### 1. 安装 Node.js
 - 下载地址：https://nodejs.org
-- 版本要求：18.x 或更高
+- 版本要求：20.x 或更高（与 `.nvmrc` 和 package.json engines 一致）
 - 安装后验证：
   ```bash
   node --version
