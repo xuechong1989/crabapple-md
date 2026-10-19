@@ -4,6 +4,7 @@ node_modules/
 # 构建产物
 dist/
 src-tauri/target/
+release/
 
 # 日志与临时文件
 *.log

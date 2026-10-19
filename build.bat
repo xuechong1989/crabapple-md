@@ -135,20 +135,32 @@ if errorlevel 1 (
     exit /b 1
 )
 
-REM ---------- 收尾：定位安装包 ----------
+REM ---------- 收尾：复制产物到浅目录并定位 ----------
+REM Tauri 的产物固定生成在 src-tauri\target 深处且无法配置输出位置，
+REM 这里复制到仓库根的 release\ 目录，方便用户直接取用
 set "SETUP_DIR=src-tauri\target\release\bundle\nsis"
+set "APP_EXE=src-tauri\target\release\crabapple-md.exe"
+set "OUT_DIR=release"
 set "SETUP_EXE="
 for /f "delims=" %%F in ('dir /b /o-d "%SETUP_DIR%\*setup.exe" 2^>nul') do (
     if not defined SETUP_EXE set "SETUP_EXE=%%F"
+)
+
+if defined SETUP_EXE (
+    if not exist "%OUT_DIR%" mkdir "%OUT_DIR%"
+    del /q "%OUT_DIR%\crabapple-md*.exe" >nul 2>nul
+    copy /y "%SETUP_DIR%\%SETUP_EXE%" "%OUT_DIR%\" >nul
+    if exist "%APP_EXE%" copy /y "%APP_EXE%" "%OUT_DIR%\" >nul
 )
 
 echo.
 echo ==========================================
 echo    构建成功！
 if defined SETUP_EXE (
-    echo    安装包：%SETUP_DIR%\%SETUP_EXE%
-    echo    已在资源管理器中定位该文件。
-    explorer /select,"%~dp0%SETUP_DIR%\%SETUP_EXE%"
+    echo    安装包：release\%SETUP_EXE%
+    if exist "%OUT_DIR%\crabapple-md.exe" echo    便携版：release\crabapple-md.exe
+    echo    已在资源管理器中定位安装包。
+    explorer /select,"%~dp0%OUT_DIR%\%SETUP_EXE%"
 ) else (
     echo    安装包目录：%SETUP_DIR%
     start "" "%~dp0%SETUP_DIR%"

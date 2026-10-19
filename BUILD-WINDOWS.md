@@ -55,13 +55,21 @@ pnpm tauri dev
 
 ## 输出文件
 
-编译完成后，产物位于：
+双击 `build.bat` 构建完成后，产物会自动复制到仓库根的浅目录：
+
+```
+release/
+├── crabapple-md_0.4.0_x64-setup.exe   # NSIS 安装包
+└── crabapple-md.exe                   # 便携版
+```
+
+Tauri 的原始产物位于 Cargo 构建目录深处（该位置无法配置）：
 
 ```
 src-tauri/target/release/
-├── crabapple-md.exe                 # 主程序
+├── crabapple-md.exe
 └── bundle/nsis/
-    └── crabapple-md_0.4.0_x64-setup.exe   # NSIS 安装包
+    └── crabapple-md_0.4.0_x64-setup.exe
 ```
 
 ## 本机固定安装目录

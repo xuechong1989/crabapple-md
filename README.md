@@ -107,12 +107,12 @@ pnpm tauri build
 输出目录：
 
 ```text
-src-tauri/target/release/
-├── crabapple-md.exe
-└── bundle/
-    └── nsis/
-        └── crabapple-md_0.4.0_x64-setup.exe
+release/                                 ← build.bat 自动复制到这里
+├── crabapple-md_0.4.0_x64-setup.exe     ← NSIS 安装包
+└── crabapple-md.exe                     ← 便携版
 ```
+
+> Tauri 的原始产物固定生成在 `src-tauri/target/release/bundle/nsis/`（Cargo 构建目录深处，且无法配置输出位置）。双击 `build.bat` 时脚本会在构建完成后自动把安装包和便携版 exe 复制到仓库根的 `release\` 并定位；命令行方式构建的产物在上述深目录中，可自行复制或改用 `build.bat`。
 
 手动准备环境的完整说明见 [BUILD-WINDOWS.md](BUILD-WINDOWS.md)。
 
