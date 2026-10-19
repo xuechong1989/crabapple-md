@@ -1,6 +1,6 @@
 # crabapple-md Windows 编译说明
 
-> 作者 xuechong 2026-06-17 ｜ 适用于 crabapple-md v0.4.0
+> 作者 xuechong 2026-10-19 ｜ 适用于 crabapple-md v0.4.0
 
 ## 环境要求
 
@@ -34,6 +34,10 @@ npm install -g pnpm
 
 ## 编译步骤
 
+### 0. 一键方式（推荐）
+
+双击仓库根目录的 `build.bat`：脚本会自动检查并补齐 Node.js、pnpm、Rust、Visual Studio Build Tools（缺失时经 winget 静默安装，Build Tools 会先询问），然后安装依赖、完成构建，并自动在资源管理器中定位安装包。以下手动步骤仅在需要完全掌控环境时使用。
+
 ### 1. 安装依赖
 ```bash
 pnpm install
@@ -48,8 +52,6 @@ pnpm tauri build
 ```bash
 pnpm tauri dev
 ```
-
-也可以直接双击 `build.bat`，按菜单选择「构建并运行 / 仅构建 / 开发模式 / 检查环境」。
 
 ## 输出文件
 

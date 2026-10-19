@@ -92,6 +92,12 @@ pnpm build           # tsc && vite build
 
 ## 打包 Windows 安装包
 
+最简单的方式：**双击仓库根目录的 `build.bat`**。
+
+脚本会自动完成全部工作：依次检查 Node.js、pnpm、Rust、Visual Studio Build Tools，缺失的依赖通过 winget 静默安装（Build Tools 约 4GB，安装前会先询问）；随后安装前端依赖并执行 `pnpm tauri build`，结束后自动在资源管理器中定位生成的安装包。全程无需人工干预，刚下载源码的机器直接双击即可。
+
+命令行方式（本机已具备构建环境时）：
+
 ```bash
 cd crabapple-md
 pnpm install
@@ -108,7 +114,7 @@ src-tauri/target/release/
         └── crabapple-md_0.4.0_x64-setup.exe
 ```
 
-也可以双击 `build.bat`，按菜单选择构建/运行/检查环境。详细步骤见 [BUILD-WINDOWS.md](BUILD-WINDOWS.md)。
+手动准备环境的完整说明见 [BUILD-WINDOWS.md](BUILD-WINDOWS.md)。
 
 ## 安装后的使用
 
